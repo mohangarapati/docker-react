@@ -36,7 +36,7 @@ jobs:
         # severities of vulnerabilities to be displayed
         severity: HIGH,CRITICAL
         # output format (table, json, template)
-        format: json
+        format: table
         # use an existing template for rendering output (@/contrib/gitlab.tpl, @/contrib/junit.tpl, @/contrib/html.tpl)
 
               
