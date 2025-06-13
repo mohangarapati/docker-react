@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date)
+      run: docker build . --file Dockerfile --tag my-image-name:latest
     - name: Aqua Security Trivy
       # You may pin to the exact commit or the version.
       # uses: aquasecurity/trivy-action@76071ef0d7ec797419534a183b498b4d6366cf37
@@ -24,7 +24,7 @@ jobs:
         # Scan type to use for scanning vulnerability
         scan-type: image
         # image reference (for backward compatibility)
-        image-ref: my-image-name:$(date)
+        image-ref: my-image-name:latest
         # reference of tar file to scan
         scan-ref: .
         # exit code when vulnerabilities were found
