@@ -16,3 +16,27 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Aqua Security Trivy
+      # You may pin to the exact commit or the version.
+      # uses: aquasecurity/trivy-action@76071ef0d7ec797419534a183b498b4d6366cf37
+      uses: aquasecurity/trivy-action@0.31.0
+      with:
+        # Scan type to use for scanning vulnerability
+        scan-type: image
+        # image reference (for backward compatibility)
+        image-ref: my-image-name:$(date +%s)
+        # reference of tar file to scan
+        scan-ref: .
+        # exit code when vulnerabilities were found
+        exit-code: 1
+        # ignore unfixed vulnerabilities
+        ignore-unfixed: false
+        # comma-separated list of vulnerability types (os,library)
+        vuln-type: os,library
+        # severities of vulnerabilities to be displayed
+        severity: HIGH,CRITICAL
+        # output format (table, json, template)
+        format: json
+        # use an existing template for rendering output (@/contrib/gitlab.tpl, @/contrib/junit.tpl, @/contrib/html.tpl)
+
+              
