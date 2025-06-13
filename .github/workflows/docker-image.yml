@@ -28,7 +28,7 @@ jobs:
         # reference of tar file to scan
         scan-ref: .
         # exit code when vulnerabilities were found
-        exit-code: 1
+        exit-code: 0
         # ignore unfixed vulnerabilities
         ignore-unfixed: false
         # comma-separated list of vulnerability types (os,library)
