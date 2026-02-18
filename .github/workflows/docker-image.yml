@@ -19,7 +19,7 @@ jobs:
     - name: Aqua Security Trivy
       # You may pin to the exact commit or the version.
       # uses: aquasecurity/trivy-action@76071ef0d7ec797419534a183b498b4d6366cf37
-      uses: aquasecurity/trivy-action@0.31.0
+      uses: aquasecurity/trivy-action@0.34.0
       with:
         # Scan type to use for scanning vulnerability
         scan-type: image
